@@ -1,0 +1,13 @@
+<header id="main-header" class="d-flex align-items-center justify-content-between p-3 shadow-sm">
+    <h1 class="header-title">{{ titulo() }}</h1>
+    <nav class="user-actions d-flex gap-3">
+      <a [routerLink]="['/usuario']" routerLinkActive="active-link" class="nav-link">PERFIL</a>
+      <a [routerLink]="['/estado-cocheras']" routerLinkActive="active-link" class="nav-link">COCHERAS</a>
+      <a [routerLink]="['/reportes']" routerLinkActive="active-link" class="nav-link">REPORTES</a>
+      <ng-container *ngIf="esAdmin()">
+        <a [routerLink]="['/reportes']" routerLinkActive="active-link" class="nav-link">REPORTES</a>
+      </ng-container>
+      <a [routerLink]="['/login']" routerLinkActive="active-link" class="nav-link">LOGOUT</a>
+    </nav>
+  </header>
+  

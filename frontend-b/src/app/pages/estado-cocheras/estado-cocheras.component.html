@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<div class="text-center my-4">
+  <button (click)="agregarFila()" class="btn btn-primary btn-lg" id="agregar">
+    AGREGAR FILA
+  </button>
+</div>
+
+<div class="table-container">
+  <div class="row header-row py-2">
+    <div class="col-3 text-center fw-bold">Nro</div>
+    <div class="col-3 text-center fw-bold">Disponibilidad</div>
+    <div class="col-3 text-center fw-bold">Ingreso</div>
+    <div class="col-3 text-center fw-bold">Acciones</div>
+  </div>
+
+  <div *ngFor="let fila of filas; let i = index" class="row data-row py-3 align-items-center cursor" (click)="!fila.deshabilitada ? abrirModalNuevoEstacionamiento(fila.id) : null">
+    <div class="col-3 text-center">{{ fila.id }}</div>
+    <div class="col-3 text-center">
+      <span [ngClass]="{'text-success': !fila.deshabilitada, 'text-danger': fila.deshabilitada}">
+        {{ fila.deshabilitada ? 'No Disponible' : 'Disponible' }}
+      </span>
+    </div>
+    <div class="col-3 text-center">
+      {{ fila.descripcion }}
+      <button *ngIf="fila.deshabilitada && fila.descripcion !== 'Disponible'" 
+              (click)="cobrarEstacionamiento(fila.id)" 
+              class="btn btn-outline-success btn-sm">
+        Cobrar
+      </button>
+    </div>
+    <div class="col-3 text-center">
+      <button (click)="cambiarDisponibilidadCochera(i, $event)" 
+              class="btn btn-secondary btn-sm me-2">
+        {{ fila.deshabilitada ? 'Habilitar' : 'Deshabilitar' }}
+      </button>
+      <button (click)="eliminarFila(i, $event)" class="btn btn-danger btn-sm">
+        Eliminar
+      </button>
+    </div>
+  </div>
+</div>

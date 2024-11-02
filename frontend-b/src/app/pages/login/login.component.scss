@@ -1,0 +1,72 @@
+/* Configuración global */
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  color: #4a4a4a;
+}
+
+/* Estilos del contenedor izquierdo */
+.custom-left {
+  background-image: url('https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2015/08/453561-parking.jpg?tf=1200x');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
+
+.custom-text {
+  font-size: 1.8rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Contenedor del formulario */
+.form-container {
+  background-color: #ffffff;
+  max-width: 450px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Estilo de los elementos del formulario */
+.form-label {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.3);
+}
+
+/* Botones */
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #0a58ca;
+  border-color: #0a58ca;
+}
+
+.btn-outline-light {
+  border-color: #0d6efd;
+  color: #0d6efd;
+}
+
+.btn-outline-light:hover {
+  background-color: #0d6efd;
+  color: #ffffff;
+}
